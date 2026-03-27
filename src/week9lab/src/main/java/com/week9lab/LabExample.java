@@ -8,6 +8,7 @@ public class LabExample {
 
     public static SinglyLinkedList process(SinglyLinkedList input) {
         SinglyLinkedList answer = new SinglyLinkedList();
+        SinglyLinkedList reversed = input.deepClone();
 
         /*
          * STUDENTS NEED TO ADD/EDIT CODE STARTING HERE
@@ -17,7 +18,33 @@ public class LabExample {
         // Here I am simply traversing the list and copying the input list to the output
         // answer list.
         // Students code needs to do something different.
-        LinkedListNode curr = input.head;
+
+        // Count nodes in linked list
+        LinkedListNode curr = reversed.head;
+        Integer nodeCounter = 0;
+        while (curr != null) {
+            curr = curr.next;
+            nodeCounter++;
+        }
+
+        // Calculate midpoint and reset curr pointer
+        Integer midpoint = nodeCounter / 2;
+        curr = reversed.head;
+
+        // Reverse half of Linked List
+        LinkedListNode next = null;
+        LinkedListNode prev = null;
+        while (midpoint > 0) {
+            next = curr.next;
+            curr.next = prev;
+            curr.turnRight = !curr.turnRight;
+            prev = curr;
+            curr = next;
+            midpoint--;
+        }
+        curr = prev;
+
+        // Insert reversed half of linked list
         while (curr != null) {
             answer.insert(curr.turnRight, curr.street, curr.distance);
             curr = curr.next;
