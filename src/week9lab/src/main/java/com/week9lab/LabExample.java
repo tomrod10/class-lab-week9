@@ -4,13 +4,7 @@ import com.google.gson.Gson;
 
 public class LabExample {
 
-    /*
-     * STUDENTS NEED TO CHANGE THE PATH TO POINT TO THE DATA FILE ON THEIR LAPTOPS
-     */
-    // private static String dataFilePath =
-    // "/Users/jerom/Documents/GitHub/class-java/stack-lab/demo/src/main/java/com/example/socksTestData.json";
-
-    private static String dataFilePath = "/Users/jerom/Documents/GitHub/class-java/linked-list-lab2/demo/src/main/java/com/example/mapTestData.json";
+    private static String dataFilePath = "/Users/tomasrodriguez/Documents/college/SJCC/Spring 2026/CIS-055 Data Structures & Algorithms/Module 9/lab/src/week9lab/src/main/java/com/week9lab/mapTestData.json";
 
     public static SinglyLinkedList process(SinglyLinkedList input) {
         SinglyLinkedList answer = new SinglyLinkedList();
