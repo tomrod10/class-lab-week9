@@ -7,8 +7,7 @@ public class LabExample {
     private static String dataFilePath = "/Users/tomasrodriguez/Documents/college/SJCC/Spring 2026/CIS-055 Data Structures & Algorithms/Module 9/lab/src/week9lab/src/main/java/com/week9lab/mapTestData.json";
 
     public static SinglyLinkedList process(SinglyLinkedList input) {
-        SinglyLinkedList answer = new SinglyLinkedList();
-        SinglyLinkedList reversed = input.deepClone();
+        SinglyLinkedList answer = input.deepClone();
 
         /*
          * STUDENTS NEED TO ADD/EDIT CODE STARTING HERE
@@ -19,8 +18,10 @@ public class LabExample {
         // answer list.
         // Students code needs to do something different.
 
+        // Time Complexity: O(2.5n) => O(n) | Space complexity: O(1)
+
         // Count nodes in linked list
-        LinkedListNode curr = reversed.head;
+        LinkedListNode curr = answer.head;
         Integer nodeCounter = 0;
         while (curr != null) {
             curr = curr.next;
@@ -29,7 +30,7 @@ public class LabExample {
 
         // Calculate midpoint and reset curr pointer
         Integer midpoint = nodeCounter / 2;
-        curr = reversed.head;
+        curr = answer.head;
 
         // Reverse half of Linked List
         LinkedListNode next = null;
